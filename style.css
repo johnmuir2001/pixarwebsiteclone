@@ -3,33 +3,44 @@ body{
     padding: 0;
     background: black;
 }
+  /* NAV BAR */
 .navContainer{
     padding: 0px;
     display: flex;
+    z-index: 5;
 }
-
+.logo{
+    justify-content: flex-start;
+    text-align: left;
+}
 ul{
-    display: flex;
     align-items: center;
-    justify-items: right;
+    align-content: center;
+    justify-content: space-between;
     list-style-type: none;
+    display: flex;
     width: 100vw;
     height: 55px;
     margin: 0px;
-    padding: 33px 118px;
+    padding: 33px 170px 33px 118px;
     overflow: hidden;
     background-color: #ffffff;
     font-weight: 500;
     font-size: 15px;
-    font-family: 'Simplo' ,Arial,sans-serif;
+    font-family: 'Brandon Grotesque' ,Arial,sans-serif;
     letter-spacing: .14em;
     text-transform: uppercase;
+    z-index: 5;
 }
 img {
     padding: 1px 24px;
 }
+.dropdown{
+    width: auto;
+}
 li a, .dropbtn {
     display: inline-block;
+    width: auto;
     color: black;
     text-align: center;
     padding: 9.27px 0px;
@@ -44,12 +55,12 @@ li a:hover {
     display: none;
     position: absolute;
     background-color: #1d1d1d;
-    min-width: 160px;
+    width: auto;
     height: auto;
-    z-index: 1;
+    top: auto;
+    z-index: 10;
     padding: 7px 10px;
-}
-  
+} 
 .dropdownContent a {
     color: #ffffff;
     padding: 12px 16px;
@@ -59,24 +70,40 @@ li a:hover {
     margin: 12px 0px;
     padding: 0px 14px;
 }
-  
 .dropdownContent a:hover {
     color: #747474;
     transition: 0.17s;
 }
-  
 .dropdown:hover .dropdownContent {
     display: block;
 }
 .tabs{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-end;
+    flex-direction: row;
+    float: right;
+    align-items: center;
+}
+ /* PARALLAX STUFF */
+#gropu1 {
+     z-index: 5;
+}
+#group2 {
+    z-index: -7;
+}
+#group3 {
+    z-index: 4;
 }
 .parallax {
     perspective: 1px;
-    height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
+    height: 1000px;
+}
+.parallax__group {
+    position: relative;
+    height: 500px;
+    transform-style: preserve-3d;
 }
 .parallax__layer {
     position: absolute;
@@ -86,14 +113,158 @@ li a:hover {
     left: 0;
 }
 .parallax__layer--base {
-    transform: translateZ(0);
+    transform: translateZ(0px);
+    z-index: 4;
 }
 .parallax__layer--back {
     transform: translateZ(-1px);
 }
 .onward{
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    height: 2100px;
+    transform: translate(-50%, -50%);
+}
+.onwardlogo{
+    position: absolute;
+    left: 50%;
+    top: 57.5%;
+    transform: translate(-50%, -50%);
+}
+
+  /* BOTTOM OF PAGE */
+.thirdBlock{
+    position: absolute;
+    height: 1154px;
+    width: 100vw;
+    background: white;
+    text-align: center;
+    left: 50%;
+    top: 170%;
+    transform: translate(-50%, -50%);
+}
+.top{
+    padding: 150px 140px;
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-content: center;
+}
+.imgcontainer{
+    padding: 0px 17px 17px 17px;
+    width: 100%;
+    max-width: 515px;
+    height: auto;
+    flex-wrap: nowrap;
+}
+.imgtext {
+    flex-direction: row;
+    align-content: center;
+}
+p {
+    font-weight: bold;
+    font-size: 14px;
+    font-family: 'Brandon Grotesque' ,Arial,sans-serif;
+    letter-spacing: .30em;
+    text-transform: uppercase;
+}
+.bottom {
+    padding: 0px 132px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    height: 430px;
+    bottom: 0;
+}
+.disneylogo {
+    max-width: 230px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+    transform: translate(-12%, 0%)
+}
+.disney {
+    width: 240px;
+}
+.social {
+    padding: 55px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.icon {
+    padding: 0px;
+    transition: 0.3s;
+}
+.facebook {
+    padding: 8px;
+    width: auto;
+    height: 23px;
+}
+.twitter {
+    padding: 8px;
+    width: auto;
+    height: 18px;
+}
+.insta {
+    padding: 8px;
+    width: auto;
+    height: 22px;
+}
+.youtube {
+    padding: 8px;
+    width: auto;
+    height: 16px;
+}
+img {
+    cursor: pointer;
+    transition: 0.5s;
+}
+.icon:hover img {
+    opacity: 0.4;
+}
+.icon img:hover {
+    opacity: 1;
+}
+.privacy {
+    font-weight: 400;
+    font-size: 15px;
+    font-family: 'Brandon Grotesque' ,Arial,sans-serif;
+    letter-spacing: .20em;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.privpolicy {
+    margin: 10px 10px 3px 10px;
+    border-bottom: 0.001rem solid #000
+}
+.privpolicy:hover {
+    color: #aeaeae;
+    transition: 0.17s;
+}
+.tc {
+    margin: 10px 10px 3px 10px;
+    border-bottom: 0.001rem solid #000;
+}
+.tc:hover {
+    color: #aeaeae;
+    transition: 0.17s;
+}
+.age {
+    font-weight: 400;
+    font-size: 0.9rem;
+    font-family: 'Brandon Grotesque' ,Arial,sans-serif;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+}
+.disneyage {
+    margin: 10px;
 }
